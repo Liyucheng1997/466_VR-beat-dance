@@ -1,8 +1,8 @@
-# 碎星 · VR 节奏游戏
+﻿# 碎星 · VR 节奏游戏
 
 夜色湖面上的原创 VR 节奏游戏。双手各持一把光刃，按节拍和方向劈碎飞来的星晶。
 
-在线游玩：<https://liyucheng1997.github.io/suixing-vr/>
+在线游玩：<https://liyucheng1997.github.io/466_VR-beat-dance/>
 
 用 VR 头显的浏览器打开（Pico、Quest 等支持 WebXR 的浏览器），点「进入 VR」。没有头显也可以在电脑上点「桌面预览」，用鼠标挥砍。
 
