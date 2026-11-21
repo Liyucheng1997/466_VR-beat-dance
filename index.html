@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>碎星 · VR 节奏游戏</title>
+<style>
+  :root { --amber: #ffb347; --teal: #35e0d0; }
+  html, body { margin: 0; height: 100%; background: #02030a; color: #e9edf7; overflow: hidden;
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; }
+  canvas { display: block; }
+  #overlay { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: rgba(2, 3, 10, 0.72); z-index: 10; }
+  #overlay.hidden { display: none; }
+  .card { width: min(560px, calc(100% - 32px)); padding: 40px 36px; border-radius: 28px;
+    background: rgba(16, 20, 36, 0.92); border: 1px solid rgba(255, 255, 255, 0.08); text-align: center; }
+  h1 { margin: 0; font-size: 64px; letter-spacing: 12px; text-indent: 12px; font-weight: 800; }
+  h1 span:first-child { color: var(--amber); }
+  h1 span:last-child { color: var(--teal); }
+  .sub { margin: 10px 0 26px; color: #9aa4c0; font-size: 17px; }
+  .how { text-align: left; margin: 0 0 28px; padding: 0; list-style: none; font-size: 17px; line-height: 1.9; color: #c9d0e4; }
+  .how b.a { color: var(--amber); } .how b.t { color: var(--teal); }
+  .btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  button { border: 0; border-radius: 999px; padding: 18px 40px; font-size: 22px; font-weight: 700; cursor: pointer;
+    font-family: inherit; }
+  #btn-vr { background: var(--teal); color: #031316; }
+  #btn-vr:disabled { background: #2a3145; color: #6c7590; cursor: not-allowed; }
+  #btn-desktop { background: rgba(255, 255, 255, 0.1); color: #e9edf7; }
+  #status { margin-top: 18px; min-height: 22px; font-size: 15px; color: #7f89a6; }
+  #hint { position: fixed; left: 0; right: 0; bottom: 18px; text-align: center; font-size: 15px; color: #9aa4c0;
+    pointer-events: none; display: none; }
+</style>
+</head>
+<body>
+<div id="overlay">
+  <div class="card">
+    <h1><span>碎</span><span>星</span></h1>
+    <p class="sub">夜色湖面上的 VR 节奏游戏</p>
+    <ul class="how">
+      <li>左手 <b class="a">琥珀光刃</b>，右手 <b class="t">青色光刃</b>，劈碎同色的星晶</li>
+      <li>星晶上的箭头是挥砍方向，圆环表示任意方向</li>
+      <li>进入后劈开「普通」或「困难」星晶即可开始</li>
+    </ul>
+    <div class="btns">
+      <button id="btn-vr" disabled>进入 VR</button>
+      <button id="btn-desktop">桌面预览</button>
+    </div>
+    <div id="status">正在检测 VR 支持…</div>
+  </div>
+</div>
+<div id="hint">桌面预览：快速划动鼠标来挥砍（不分颜色）· Esc 返回</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
